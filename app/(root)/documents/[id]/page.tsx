@@ -8,7 +8,7 @@ const Document = () => {
     <div>
       <Header>
         <div className='flex w-fit item-center justify-center gap-2'>
-          <p className='document-title'>document title</p>
+          <p className='document-title'>Share</p>
         </div>
         <SignedOut>
             <SignInButton />
