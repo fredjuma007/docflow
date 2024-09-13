@@ -10,7 +10,7 @@ const Document = () => {
           <p className='document-title'>document title</p>
         </div>
       </Header>
-       
+  
         <Editor />
     </div>
   )
