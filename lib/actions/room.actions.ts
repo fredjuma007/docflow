@@ -5,7 +5,7 @@ import { liveblocks } from '../liveblocks';
 import { revalidatePath } from 'next/cache';
 import { parseStringify } from '../utils';
 
-export const createDocuments = async ({ userId, email } : 
+export const createDocument = async ({ userId, email } : 
     CreateDocumentParams) => {
         const roomId = nanoid();
 
@@ -20,7 +20,7 @@ export const createDocuments = async ({ userId, email } :
                 [email]: ['room:write'],
             }
 
-            const room = await liveblocks.createRoom("roomId", {
+            const room = await liveblocks.createRoom(roomId, {
                 metadata,
                 usersAccesses,
                 defaultAccesses: []
