@@ -11,9 +11,10 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 import React from 'react';
 
-import { liveblocksConfig, LiveblocksPlugin, useEditorStatus } from '@liveblocks/react-lexical';
+import { FloatingComposer, FloatingThreads, liveblocksConfig, LiveblocksPlugin, useEditorStatus } from '@liveblocks/react-lexical';
 import Loader from '../Loader';
 import FloatingToolbarPlugin from './plugins/FloatingToolbarPlugin';
+import { useThreads } from '@liveblocks/react/suspense';
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -25,6 +26,7 @@ function Placeholder() {
 
 export function Editor({ roomId, currentUserType}: { roomId: string, currentUserType: UserType }) {
   const status = useEditorStatus();
+  const { threads } = useThreads();
 
   const initialConfig = liveblocksConfig({
     namespace: 'Editor',
@@ -66,7 +68,8 @@ export function Editor({ roomId, currentUserType}: { roomId: string, currentUser
         </div>
 
           <LiveblocksPlugin>
-            
+            <FloatingComposer className='w-[350px]' />
+            <FloatingThreads threads={threads} />
           </LiveblocksPlugin>
       </div>
     </LexicalComposer>
