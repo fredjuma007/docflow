@@ -1,4 +1,5 @@
 import AddDocumentBtn from '@/components/AddDocumentBtn'
+import { DeleteModal } from '@/components/DeleteModal'
 import Header from '@/components/header'
 import { Button } from '@/components/ui/button'
 import { getDocuments } from '@/lib/actions/room.actions'
@@ -54,7 +55,7 @@ const Home = async () => {
                       (createdAt)}</p>
                     </div>
                   </Link>
-                  {/* TODO: add delete button*/}
+                  <DeleteModal roomId={id} />
               </li>
             ))}
           </ul>

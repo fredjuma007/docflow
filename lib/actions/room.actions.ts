@@ -6,6 +6,7 @@ import { revalidatePath } from 'next/cache';
 import { getAccessType, parseStringify } from '../utils';
 import { Share } from 'next/font/google';
 import { get } from 'http';
+import { redirect } from 'next/navigation';
 
 export const createDocument = async ({ userId, email } : 
     CreateDocumentParams) => {
@@ -122,4 +123,14 @@ export const updateDocumentAccess = async ({ roomId, email, userType,
                 console.log(`Error while removing the collaborator: ${error}`);
                 
             }
-        }
+}
+
+export const deleteDocument = async (roomId: string) => {
+    try {
+      await liveblocks.deleteRoom(roomId);
+      revalidatePath('/');
+      redirect('/');
+    } catch (error) {
+      console.log(`Error happened while deleting a room: ${error}`);
+    }
+  }
