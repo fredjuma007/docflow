@@ -15,7 +15,6 @@ import { Button } from './ui/button';
 import Image from 'next/image';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
-import { User } from 'lucide-react';
 import UserTypeSelector from './UserTypeSelector';
 import Collaborator from './Collaborator';
 import { updateDocumentAccess } from '@/lib/actions/room.actions';
