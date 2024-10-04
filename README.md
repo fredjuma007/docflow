@@ -32,6 +32,7 @@ A web based text editor that lets users collaborate in real-time. It also has a 
 THE INTERFACE ⬇️⬇️⬇️
 ![Alt Text](screenshots/homepage.png)
 ![Alt Text](screenshots/text_editor.png)
+![Alt Text](screenshots/share.png)
 
 you can support me by giving a star to this repo ⭐️
 
