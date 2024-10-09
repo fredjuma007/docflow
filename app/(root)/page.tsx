@@ -1,5 +1,6 @@
 import AddDocumentBtn from '@/components/AddDocumentBtn'
 import { DeleteModal } from '@/components/DeleteModal'
+import Footer from '@/components/Footer'
 import Header from '@/components/header'
 import Notification from '@/components/Notification'
 import { getDocuments } from '@/lib/actions/room.actions'
@@ -75,6 +76,8 @@ const Home = async () => {
           />
         </div>
       )}
+
+      <Footer />
    </main>
   )
 }
